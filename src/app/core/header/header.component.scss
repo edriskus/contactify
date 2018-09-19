@@ -1,0 +1,32 @@
+@import "../../../variables";
+
+.header {
+  background: $dark;
+  min-height: 7.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .header-container {
+    min-height: 7.5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .header-brand {
+      background: url('../../../assets/logo.svg') center center no-repeat;
+      background-size: contain;
+      height: 5rem;
+      width: 15rem;
+    }
+    .header-tabs {
+      padding: 0 3rem;
+    }
+    .header-menu {
+      position: absolute;
+      top: 0;
+      right: 2rem;
+      background: $primary;
+      border-bottom-left-radius: .5rem;
+      border-bottom-right-radius: .5rem;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="header">
+  <div class="container header-container">
+    <div class="header-brand"></div>
+    <div class="header-tabs">
+      <div class="tab-group">
+        <a class="tab"
+          *ngFor="let tab of tabs"
+          [routerLink]="tab.link"
+          routerLinkActive="active">
+          {{ tab.name }}
+        </a>
+      </div>
+    </div>
+    <div class="header-search">
+      <app-search></app-search>
+    </div>
+    <div class="header-menu">
+      <app-dropdown [title]="user.name"
+        [items]="dropdownItems"></app-dropdown>
+    </div>
+  </div>
+</div>

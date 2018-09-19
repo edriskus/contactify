@@ -1,0 +1,27 @@
+// Colors
+
+$primary: #0aa3c1;
+$secondary: #217f7a;
+$tertiary: #1b3c6b;
+$dark: rgba(27, 60, 67, 1);
+$semi-dark: rgba(27, 60, 67, .5);
+$gray: #bebdb3;
+$white: #ffffff;
+
+$primary-fade: darken($primary, 10%);
+
+// Gradients
+
+$gradient-bg: linear-gradient(135deg, $secondary, $tertiary);
+
+// Misc
+
+$transition: .1s ease-in-out;
+
+// Bootstrap overrides
+
+$container-max-widths: (
+  sm: 420px,
+  md: 720px,
+  lg: 1600px
+);

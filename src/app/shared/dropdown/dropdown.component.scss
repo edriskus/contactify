@@ -1,0 +1,45 @@
+@import "../../../variables";
+
+$outer-border: 2px solid darken($primary, 10%);
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding: .5rem 2rem;
+  .dropdown-title {
+  }
+  .dropdown-content {
+    border: $outer-border;
+    border-radius: .5rem;
+    border-top-right-radius: 0;
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: 0;
+    background: $primary;
+    min-width: 13rem;
+    .dropdown-item {
+      padding: .5rem 1rem;
+      padding-left: 2rem;
+      &:not(:last-child) {
+        border-bottom: 1px solid darken($primary, 5%);
+      }
+      &:not(:first-child) {
+        border-top: 1px solid lighten($primary, 5%);
+      }
+    }
+    &:after {
+      display: block;
+      content: "";
+      transform: rotate(45deg);
+      width: .75rem;
+      height: .75rem;
+      background: $primary;
+      border-left: $outer-border;
+      border-top: $outer-border;
+      position: absolute;
+      top: -.5rem;
+      right: 1rem;
+    }
+  }
+}

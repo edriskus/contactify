@@ -1,0 +1,8 @@
+<div class="dropdown" (click)="toggleDropdown()">
+  <span class="dropdown-title">{{ title }}</span>
+  <div class="dropdown-content" *ngIf="dropdownOpen">
+    <div class="dropdown-item" (click)="openItem(item)" *ngFor="let item of items">
+      {{ item.title }}
+    </div>
+  </div>
+</div>

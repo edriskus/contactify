@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~./variables";
+@import "~./bootstrap";
+
+$tab-border: 3px solid $primary;
+
+// Containers
+
+body {
+  min-height: 100vh;
+  background: $gradient-bg;
+  color: $white;
+}
+
+// Tabs
+
+.tab-group {
+  .tab {
+    display: inline-block;
+    color: $white;
+    background-color: $primary;
+    border-top: $tab-border;
+    border-bottom: $tab-border;
+    text-transform: uppercase;
+    padding: .5rem 1rem;
+    min-width: 10rem;
+    text-align: center;
+    font-weight: 500;
+    transition: background $transition;
+    &:first-child {
+      border-left: $tab-border;
+      border-top-left-radius: 2.5rem;
+      border-bottom-left-radius: 2.5rem;
+    }
+    &:last-child {
+      border-right: $tab-border;
+      border-top-right-radius: 2.5rem;
+      border-bottom-right-radius: 2.5rem;
+    }
+    &:hover, &:focus, &:active {
+      background-color: darken($primary, 5%);
+      text-decoration: none;
+      outline: none;
+    }
+    &.active {
+      background-color: $primary-fade;
+    }
+  }
+}
