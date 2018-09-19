@@ -1,5 +1,6 @@
 @import "~./variables";
 @import "~./bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 
 $tab-border: 3px solid $primary;
 
@@ -9,6 +10,7 @@ body {
   min-height: 100vh;
   background: $gradient-bg;
   color: $white;
+  font-family: 'Open Sans', sans-serif;
 }
 
 // Tabs
@@ -24,7 +26,7 @@ body {
     padding: .5rem 1rem;
     min-width: 10rem;
     text-align: center;
-    font-weight: 500;
+    font-weight: 600;
     transition: background $transition;
     &:first-child {
       border-left: $tab-border;
@@ -45,4 +47,13 @@ body {
       background-color: $primary-fade;
     }
   }
+}
+
+// Card
+
+.card {
+  background: $white;
+  border-radius: .5rem;
+  box-shadow: 0 5px 0px 0px $quarter-dark;
+  color: $black;
 }

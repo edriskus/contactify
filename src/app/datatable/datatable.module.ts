@@ -7,6 +7,13 @@ import { FilterComponent } from './filter/filter.component';
   imports: [
     CommonModule
   ],
-  declarations: [TableComponent, FilterComponent]
+  declarations: [
+    TableComponent,
+    FilterComponent
+  ],
+  exports: [
+    TableComponent,
+    FilterComponent
+  ]
 })
 export class DatatableModule { }

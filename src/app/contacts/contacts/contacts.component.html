@@ -1,5 +1,22 @@
 <div class="container">
-  <div class="text-center p-5">
-    <h3 class="display-3">Contacts</h3>
+  <div class="row pb-3">
+    <div class="col-9">
+      <app-filter [filters]="filters"></app-filter>
+    </div>
+    <div class="col-3">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <div class="card card-full">
+        User
+      </div>
+    </div>
+    <div class="col-9">
+      <div class="card card-full">
+        <app-table></app-table>
+      </div>
+    </div>
   </div>
 </div>
