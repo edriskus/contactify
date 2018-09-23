@@ -1,3 +1,40 @@
-<p>
-  table works!
-</p>
+<div class="table-wrap container-fluid">
+  <ng-container *ngIf="data && (data.length > 0)">
+    <div class="table-header">
+      <div class="row table-header-row">
+          <div class="col-{{ cell.columns }} table-header-cell" *ngFor="let cell of columns">
+            <b class="table-header-cell-{{ cell.type }}">{{ cell.title }}</b>
+          </div>
+      </div>
+    </div>
+    <div class="table-body">
+      <div class="row table-row"
+        *ngFor="let item of data"
+        (click)="selectRow(item)"
+        [class.selected]="item == selectedRow">
+        <div class="col-{{ cell.columns }} table-cell" *ngFor="let cell of columns">
+          <ng-container [ngSwitch]="cell.type">
+            <div *ngSwitchCase="TableColumnType.text" class="table-cell-text">
+              {{ item[cell.key] }}
+            </div>
+            <div *ngSwitchCase="TableColumnType.phone" class="table-cell-phone">
+              {{ item[cell.key] }}
+            </div>
+            <div *ngSwitchCase="TableColumnType.action" class="table-cell-action">
+
+            </div>
+            <div *ngSwitchCase="TableColumnType.status" class="table-cell-status">
+
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="data && (data.length < 1)">
+    <span class="no-data">No data to display</span>
+  </ng-container>
+  <ng-container *ngIf="!data">
+    <span class="loading-data">Loading...</span>
+  </ng-container>
+</div>

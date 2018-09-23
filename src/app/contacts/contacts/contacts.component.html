@@ -9,13 +9,25 @@
   </div>
   <div class="row">
     <div class="col-3">
-      <div class="card card-full">
-        User
+      <div class="card card-full" *ngIf="selectedContact">
+        <div class="user-image" [style.backgroundImage]="formatBackground(selectedContact.image)"></div>
+        <div class="user-info p-3">
+          <div class="row" *ngFor="let field of userInfoFields">
+            <div class="col-4 text-right text-muted">{{ field.title }}:</div>
+            <div class="col-8 pl-0">{{ selectedContact[field.key] }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-full" *ngIf="!selectedContact">
+        <div class="user-empty">No contact selected</div>
       </div>
     </div>
     <div class="col-9">
       <div class="card card-full">
-        <app-table></app-table>
+        <app-table [data]="contacts$ | async"
+          [columns]="columns"
+          (select)="selectContact($event)">
+        </app-table>
       </div>
     </div>
   </div>
