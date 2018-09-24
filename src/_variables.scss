@@ -7,15 +7,21 @@ $dark: rgba(27, 60, 67, 1);
 $semi-dark: rgba(27, 60, 67, .5);
 $quarter-dark: rgba(27, 60, 67, .25);
 $gray: #bebdb3;
+$light-gray: #d8d8ce;
 $white: #ffffff;
 $black: #333333;
 $table-active: #e7f6f9;
+$separator-gray: #eaeae8;
 
 $primary-fade: darken($primary, 10%);
 
 // Gradients
 
 $gradient-bg: linear-gradient(135deg, $secondary, $tertiary);
+
+// Shadows
+
+$button-shadow: 0 2px 5px 1px rgba(0,0,0,.1);
 
 // Misc
 

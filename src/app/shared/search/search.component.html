@@ -4,5 +4,7 @@
     [ngModel]="searchText"
     (ngModelChange)="searchTextChange($event)"
     placeholder="Search">
-  <div class="search-button"></div>
+  <div class="search-button">
+    <fa-icon [icon]="searchIcon"></fa-icon>
+  </div>
 </div>

@@ -2,13 +2,28 @@
   <div class="row filter-row">
     <div *ngFor="let filter of filters"
       class="col-{{ filter.columnSpan }}">
-      <div class="text-filter">
-        <input type="text"
-          class="text-filter-input"
-          [placeholder]="filter.placeholder">
-      </div>
+      <ng-container [ngSwitch]="filter.type">
+        <div class="text-filter" *ngSwitchCase="'text'">
+          <input type="text"
+            class="text-filter-input"
+            [(ngModel)]="filterValues[filter.key]"
+            [placeholder]="filter.placeholder">
+        </div>
+        <ng-container *ngSwitchCase="'boolean'">
+          <input class="inp-cbx" id="cbx" type="checkbox" style="display: none;" [(ngModel)]="filterValues[filter.key]" />
+          <label class="cbx" for="cbx">
+            <span>
+              <svg width="12px" height="10px" viewbox="0 0 12 10">
+                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+              </svg>
+            </span>
+            <span>{{ filter.placeholder }}</span>
+          </label>
+        </ng-container>
+      </ng-container>
     </div>
-    <div class="col-2">Active</div>
-    <div class="col-2">Filter</div>
+    <div class="col-2 d-flex align-items-center">
+      <button class="btn-outline" (click)="submit()">Filter</button>
+    </div>
   </div>
 </div>

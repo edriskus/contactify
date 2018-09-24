@@ -12,7 +12,8 @@
 .table-header {
   width: 100%;
   .table-header-cell {
-    padding: 1rem;
+    padding: 13px 1rem;
+    color: $white;
     & > b {
       display: block;
       width: 100%;
@@ -23,11 +24,10 @@
     .table-header-cell-phone {
       text-align: right;
     }
-    .table-header-cell-action {
-
+    .table-header-cell-actions {
     }
     .table-header-cell-status {
-
+      padding-left: 40px;
     }
   }
 }
@@ -35,12 +35,14 @@
 .table-body {
   width: 100%;
   height: 100%;
+  overflow: auto;
   .table-row {
+    border-bottom: 1px solid $separator-gray;
     &.selected {
       background: $table-active;
     }
     .table-cell {
-      padding: .75rem 1rem;
+      padding: 11px 1rem;
       cursor: default;
       .table-cell-text {
 
@@ -48,11 +50,40 @@
       .table-cell-phone {
         text-align: right;
       }
-      .table-cell-action {
-
+      .table-cell-actions {
+        display: flex;
+        justify-content: space-around;
+        .table-action {
+          cursor: pointer;
+          padding: 7px;
+          width: 1.75rem;
+          height: 1.75rem;
+          text-align: center;
+          font-size: 14px;
+          line-height: 1;
+        }
       }
       .table-cell-status {
+        .status-icon {
+          font-size: 14px;
+          min-width: 40px;
+          display: inline-block;
+          padding-left: 5px;
+        }
+        .status-text {
 
+        }
+      }
+    }
+    &.selected {
+      .table-cell {
+        .table-cell-actions {
+          .table-action {
+            color: $white;
+            background: $primary;
+            border-radius: .5rem;
+          }
+        }
       }
     }
   }

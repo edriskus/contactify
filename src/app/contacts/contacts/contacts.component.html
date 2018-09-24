@@ -1,20 +1,31 @@
 <div class="container">
   <div class="row pb-3">
-    <div class="col-9">
-      <app-filter [filters]="filters"></app-filter>
+    <div class="col-7">
+      <app-filter [filters]="filters" (filterChange)="filterChange($event)"></app-filter>
     </div>
-    <div class="col-3">
-
+    <div class="col-5 text-left col-add text-right">
+      <button class="btn-new-contact">
+        <span class="icon-plus"><fa-icon [icon]="plusIcon"></fa-icon></span>
+        <span class="text">Add new Contact</span>
+      </button>
     </div>
   </div>
   <div class="row">
-    <div class="col-3">
+    <div class="col col-2p">
       <div class="card card-full" *ngIf="selectedContact">
-        <div class="user-image" [style.backgroundImage]="formatBackground(selectedContact.image)"></div>
+        <div class="user-image">
+          <div class="user-image-border">
+            <div class="user-image-content"
+              [style.backgroundImage]="formatBackground(selectedContact.image)"></div>
+          </div>
+        </div>
         <div class="user-info p-3">
           <div class="row" *ngFor="let field of userInfoFields">
-            <div class="col-4 text-right text-muted">{{ field.title }}:</div>
-            <div class="col-8 pl-0">{{ selectedContact[field.key] }}</div>
+            <div class="col-5 text-right text-muted">{{ field.title }}:</div>
+            <div class="col-7 pl-0">
+              <span *ngIf="!field.email" class="w-100 text-truncate">{{ selectedContact[field.key] }}</span>
+              <a *ngIf="field.email" class="w-100 text-truncate" [href]="'mailto:' + selectedContact[field.key]">{{ selectedContact[field.key] }}</a>
+            </div>
           </div>
         </div>
       </div>
@@ -22,9 +33,10 @@
         <div class="user-empty">No contact selected</div>
       </div>
     </div>
-    <div class="col-9">
+    <div class="col">
       <div class="card card-full">
-        <app-table [data]="contacts$ | async"
+        <app-table
+          [data]="contacts"
           [columns]="columns"
           (select)="selectContact($event)">
         </app-table>

@@ -3,5 +3,36 @@
 .footer {
   background: $semi-dark;
   min-height: 12.5rem;
+  height: 12.5rem;
   width: 100%;
+  position: relative;
+  & > .contaner {
+    min-height: 100%;
+    & > .row {
+      min-height: 100%;
+    }
+  }
+}
+
+.dark-tile-wrap {
+  min-height: 12.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .dark-tile {
+    display: flex;
+    align-items: center;
+    background: $semi-dark;
+    padding: .5rem;
+    padding-left: 3.5rem;
+    width: 100%;
+    height: calc(100% - 1px);
+    &:first-child {
+      margin-bottom: 2px;
+    }
+    & > .row {
+      width: 100%;
+    }
+  }
 }

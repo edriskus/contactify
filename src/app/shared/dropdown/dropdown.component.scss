@@ -18,6 +18,7 @@ $outer-border: 2px solid darken($primary, 10%);
     right: 0;
     background: $primary;
     min-width: 14rem;
+    z-index: 1;
     .dropdown-item {
       padding: .5rem 1rem;
       padding-left: 2rem;

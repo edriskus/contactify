@@ -1,5 +1,8 @@
+@import "../../../variables";
+
 .card-full {
   height: calc(100vh - 30rem);
+  overflow: hidden;
 }
 
 .user-empty {
@@ -8,4 +11,65 @@
   height: 100%;
   justify-content: center;
   align-items: center;
+}
+
+.user-image {
+  width: 100%;
+  height: 270px;
+  display: block;
+  padding: 1rem;
+  padding-bottom: 0;
+  .user-image-border {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid $light-gray;
+    overflow: hidden;
+    .user-image-content {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}
+
+.w-100 {
+  display: inline-block;
+  width: 100%;
+}
+
+.col-add {
+  padding-top: 2rem;
+}
+
+.btn-new-contact {
+  box-shadow: $button-shadow;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: $secondary;
+  color: $white;
+  padding: .5rem;
+  border-radius: 2rem;
+  display: inline-flex;
+  align-items: center;
+  padding-right: .5rem;
+  font-size: 14px;
+  .icon-plus {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: darken($secondary, 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text {
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0 1rem;
+  }
 }
